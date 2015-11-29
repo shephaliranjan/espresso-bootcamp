@@ -12,11 +12,14 @@ import android.net.Uri;
 
 import com.example.weatherapp.utils.WeatherUtils;
 
+import javax.inject.Inject;
+
 public class WeatherProvider extends ContentProvider {
 
     private static final UriMatcher URI_MATCHER = buildUriMatcher();
 
-    private WeatherDBHelper weatherDatabaseHelper;
+    @Inject
+    public WeatherDBHelper weatherDatabaseHelper;
 
     static final int WEATHER = 100;
     static final int WEATHER_WITH_LOCATION = 101;

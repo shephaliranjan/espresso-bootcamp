@@ -2,6 +2,8 @@ package com.example.weatherapp;
 
 import com.example.weatherapp.activities.MainActivity;
 import com.example.weatherapp.adapters.ForecastAdapter;
+import com.example.weatherapp.data.WeatherDBHelper;
+import com.example.weatherapp.data.WeatherProvider;
 import com.example.weatherapp.fragments.DetailsActivityFragment;
 import com.example.weatherapp.fragments.MainActivityFragment;
 import com.example.weatherapp.fragments.PreferenceFragment;
@@ -22,7 +24,8 @@ import retrofit.Retrofit;
         ForecastAdapter.class,
         DetailsActivityFragment.class,
         MainActivity.class,
-        WeatherService.class})
+        WeatherService.class,
+        WeatherProvider.class})
 
 public class WeatherAppModule {
 
@@ -51,5 +54,11 @@ public class WeatherAppModule {
     @Singleton
     WeatherAppSharedPrefs providePreferenceManager() {
         return new WeatherAppSharedPrefs(weatherApp.getApplicationContext());
+    }
+
+    @Provides
+    @Singleton
+    WeatherDBHelper provideWeatherDBHelper() {
+        return new WeatherDBHelper(weatherApp.getApplicationContext());
     }
 }
