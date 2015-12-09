@@ -7,7 +7,7 @@ After finishing all tasks of this bootcamp the individual will be able to assist
 
 Please refrain from modifying the weather app source code.
 
-For this repo and request evaluation from Vladimir or Joe on each task by messaging them on Slack/hangouts/email.
+Fork this repo and request evaluation from Vladimir or Joe on each task by messaging them on Slack/hangouts/email with the link to your repo.
 
 Software:
 
