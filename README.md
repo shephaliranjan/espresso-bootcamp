@@ -70,6 +70,9 @@ Add a pull to refresh test. Verify that snackbar is displayed.
 Don't test anything other than snackbar.
 
 
+Notice that this test fails frequently. And this is because your tests don't know yet how to synchronize with the background thread to take into the account network request and response processing times.
+This will be fixed in task #10 with the implementation of the IdlingResource.
+
 #Espresso Intermediate. Dynamic content and data validation.
 
 ## Task #5 Understanding onData
@@ -116,9 +119,21 @@ Annotate the test with @Ignore so it doesn't run when you run the whole test sui
 Write a test that clicks on last forecast item of the main page in one line.
 Don't use position to scroll to the item!
 
+##Task #8: Custom ViewMatcher
+
+##### Useful  material and links: 
+-
+
+###### Objective:
+Write a test that checks number of items in the recycler view of the main activity.
+
+#####Description:
+This functionality is not available in the Espresso framework and will require an implementation of a custom ViewMatcher.
+
+
 #Espresso Advanced. Dependency Injections. Network synchronization. Fake data. 
 
-## Task #8: Dagger
+## Task #9: Dagger
 ##### Useful  material and links: 
 
 [Dagger] (http://square.github.io/dagger/)
@@ -133,7 +148,7 @@ Don't use position to scroll to the item!
 Learn how the production app initiates dependencies.
 Don't add any dependencies for now. Just add your module on top of the existing one.
 
-## Task #9: IdlingResources
+## Task #10: IdlingResources
 ##### Useful  material and links: 
 
 [IdlingResource] (http://developer.android.com/reference/android/support/test/espresso/IdlingResource.html)
@@ -147,7 +162,7 @@ Don't add any dependencies for now. Just add your module on top of the existing 
 This is the right time to use a test module to your advantage.
 You test should pass 100% of the runs.
 
-## Task #10:MockWebServer
+## Task #11:MockWebServer
 #####Useful  material and links: 
 
 [MockWebServer] (https://github.com/square/okhttp/tree/master/mockwebserver)
