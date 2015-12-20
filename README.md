@@ -154,6 +154,7 @@ Write a test that launches straight into the DetailsActivity and verify all that
 You need to setup the test in a way that the data is preloaded into the databse. You will need to do it before activity launches.
 Your activity after the setup must look identical to a normal activity that was created as a result of a selection on the main activity.
 
+#Espresso Advanced. Dependency Injections. Network synchronization. Fake data. 		
 
 ## Task #10: Dagger
 ##### Useful  material and links: 
