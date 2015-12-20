@@ -18,7 +18,7 @@ Software:
 
 #Espresso basics
 
-## Task #1: Setup and dependencies
+## Task #0: Setup and dependencies
 
 ##### Useful  material and links: 
 
@@ -34,7 +34,7 @@ Software:
 Using the links above set up an androidTest directory and add your first test.
 Notice that the app crashes right away. Think about what you did that could cause the problem.
 
-## Task #2: Exploring Espresso API
+## Task #1: Exploring Espresso API
 
 ##### Useful  material and links: 
 
@@ -52,7 +52,7 @@ To click on items and assert the view you will need to know the identifiers of t
 Main difference between two tools is that hierarchy viewer provides you with ENTIRE hierarchy, including items that are not visible (invisbile, gone), while uiatomatorviewer 
 shows only visible views. This discrepancy is important to remember as there is a fundamental difference between a view that doesn't exist and view that is not visible.
 
-## Task #3: More on Espresso API
+## Task #2: More on Espresso API.
 
 ##### Objective:
 Add a test that Changes the location in settings and verifies that the new location is saved in the settings
@@ -61,7 +61,7 @@ Add a test that Changes the location in settings and verifies that the new locat
 Same as #2 this task is just for exploring capabilities of out-of-the box features of espresso library.
 Please don't test anything other than UI. Only validate that settings accepted your change. Don't test network responses and data integrity.
 
-## Task #4: Last one on espresso API
+## Task #3: Last one on espresso API
 
 ##### Objective:
 Add a pull to refresh test. Verify that snackbar is displayed.
@@ -71,11 +71,11 @@ Don't test anything other than snackbar.
 
 
 Notice that this test fails frequently. And this is because your tests don't know yet how to synchronize with the background thread to take into the account network request and response processing times.
-This will be fixed in task #10 with the implementation of the IdlingResource.
+This will be fixed in task #11 with the implementation of the IdlingResource.
 
 #Espresso Intermediate. Dynamic content and data validation.
 
-## Task #5 Understanding onData
+## Task #4 Understanding onData
 
 ##### Useful  material and links: 
 
@@ -93,7 +93,7 @@ Making assertions with onData will automatically scroll to the view if it's not 
 
 Before starting the test investigate what kind of data the adapter holds in the unit selection dialog. You can write a failing test that will show you data type in the exception log.
 
-##  Task #6: CursorAdapters and onData part 2:
+##  Task #5: CursorAdapters and onData part 2:
 
 ##### Useful  material and links: 
 
@@ -111,15 +111,16 @@ Explore the source code and find where cursors are used.
 Explore the contrib library of esresso framework to find how to match data in the cursor adapters.
 Annotate the test with @Ignore so it doesn't run when you run the whole test suite.
 
-## Task #7: RecyclerViews
+## Task #6: RecyclerViews
 
 ##### Useful  material and links: 
 -
 ###### Objective:
-Write a test that clicks on last forecast item of the main page in one line.
-Don't use position to scroll to the item!
+Write a test that clicks on last forecast item of the main page.
+**Don't use position to scroll to the item!**
+**Scroll only once!**
 
-##Task #8: Custom ViewMatcher
+##Task #7: Custom ViewMatcher
 
 ##### Useful  material and links: 
 -
@@ -130,10 +131,31 @@ Write a test that checks number of items in the recycler view of the main activi
 #####Description:
 This functionality is not available in the Espresso framework and will require an implementation of a custom ViewMatcher.
 
+##Task #8: External intents
 
-#Espresso Advanced. Dependency Injections. Network synchronization. Fake data. 
+##### Useful  material and links: 
+[Espresso intents] (https://google.github.io/android-testing-support-library/docs/espresso/intents/)
 
-## Task #9: Dagger
+###### Objective:
+Write a test that verifies that correct location data is being sent to a map when Map is selected from the overflow menu.
+
+#####Description:
+-/-
+
+##Task #9: Launching into different activities
+##### Useful  material and links: 
+
+[Activity test rule] (http://developer.android.com/reference/android/support/test/rule/ActivityTestRule.html)
+
+#####Objective:
+Write a test that launches straight into the DetailsActivity and verify all that all ui elements display correct information.
+
+#####Description:
+You need to setup the test in a way that the data is preloaded into the databse. You will need to do it before activity launches.
+Your activity after the setup must look identical to a normal activity that was created as a result of a selection on the main activity.
+
+
+## Task #10: Dagger
 ##### Useful  material and links: 
 
 [Dagger] (http://square.github.io/dagger/)
@@ -148,7 +170,7 @@ This functionality is not available in the Espresso framework and will require a
 Learn how the production app initiates dependencies.
 Don't add any dependencies for now. Just add your module on top of the existing one.
 
-## Task #10: IdlingResources
+## Task #11: IdlingResources
 ##### Useful  material and links: 
 
 [IdlingResource] (http://developer.android.com/reference/android/support/test/espresso/IdlingResource.html)
@@ -160,9 +182,9 @@ Don't add any dependencies for now. Just add your module on top of the existing 
 
 #####Description:
 This is the right time to use a test module to your advantage.
-You test should pass 100% of the runs.
+You tests should pass 100% of the runs.
 
-## Task #11:MockWebServer
+## Task #12:MockWebServer
 #####Useful  material and links: 
 
 [MockWebServer] (https://github.com/square/okhttp/tree/master/mockwebserver)
