@@ -131,6 +131,9 @@ Write a test that checks number of items in the recycler view of the main activi
 #####Description:
 This functionality is not available in the Espresso framework and will require an implementation of a custom ViewMatcher.
 
+Prettify the output of the matcher's description.
+Notice that this test is flaky as well. Implementation of the custom idling resource (task #11) will make this test more stable.
+
 ##Task #8: External intents
 
 ##### Useful  material and links: 
@@ -140,7 +143,7 @@ This functionality is not available in the Espresso framework and will require a
 Write a test that verifies that correct location data is being sent to a map when Map is selected from the overflow menu.
 
 #####Description:
--/-
+To make this test independent make sure to clear the shared preference storage beforehand. Your test should be checking for a default location value.
 
 ##Task #9: Launching into different activities
 ##### Useful  material and links: 
