@@ -134,7 +134,7 @@ This functionality is not available in the Espresso framework and will require a
 Prettify the output of the matcher's description.
 Notice that this test is flaky as well. Implementation of the custom idling resource (task #11) will make this test more stable.
 
-##Task #8: External intents
+##Task #8: External intents, Independent tests and first injection.
 
 ##### Useful  material and links: 
 [Espresso intents] (https://google.github.io/android-testing-support-library/docs/espresso/intents/)
@@ -144,6 +144,8 @@ Write a test that verifies that correct location data is being sent to a map whe
 
 #####Description:
 To make this test independent make sure to clear the shared preference storage beforehand. Your test should be checking for a default location value.
+
+Before implemention your own solution take a look at the production application. Find how the data is stored and which class is used to read and write this data. Inject this class into your test and use it for your advantage.
 
 ##Task #9: Launching into different activities
 ##### Useful  material and links: 
