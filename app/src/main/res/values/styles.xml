@@ -5,7 +5,7 @@
         <item name="*android:actionModeShareDrawable">@drawable/share_menu_item</item>
         <item name="colorPrimary">@color/dark_blue</item>
         <item name="colorPrimaryDark">@color/dark_dark_blue</item>
-        <item name="android:selectableItemBackground">@drawable/selector_v21</item>
+        <item name="android:selectableItemBackground">@drawable/selector</item>
     </style>
 
     <style name="ForecastTheme" parent="AppTheme">
