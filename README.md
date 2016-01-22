@@ -168,7 +168,7 @@ Your activity after the setup must look identical to a normal activity that was 
 
 ## Refactoring time.
 
-Sit back and read Android Style Guide(ask for the link if you don't have it). Once you fully grasped the idea, refactor your tests so they look like first class tests written by Espresso master.
+Sit back and read [Espresso Style Guide](https://github.com/pivotal-vladimir/espresso-bootcamp/wiki/Espresso-Style-guide). Once you fully grasped the idea, refactor your tests so they look like first class tests written by Espresso master.
 
 #Espresso Advanced. Dependency Injections. Network synchronization. Fake data. 		
 
