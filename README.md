@@ -32,7 +32,7 @@ Software:
 #####Description:
 
 Using the links above set up an androidTest directory and add your first test.
-Notice that the app crashes right away. Think about what you did that could cause the problem.
+If you addded a contrib library you might have noticed that the app crashed right away. Fix that. You will need that library.
 
 ## Task #1: Exploring Espresso API
 
@@ -95,6 +95,12 @@ Before starting the test investigate what kind of data the adapter holds in the 
 
 ##  Task #5: CursorAdapters and onData part 2:
 
+##### Disclaimer:
+
+The app does not and will not use ListViews. But there are a lot of apps out there that are still using ListViews. Understanding the concept of onData will be your introduction to the world of  adapters.
+
+This task is important from the learning point of view, but if you are frustrated that you can't see the results feel free to skip this one and ask for a solution from those who have done it.
+
 ##### Useful  material and links: 
 
 [Cursor matchers] (http://developer.android.com/reference/android/support/test/espresso/matcher/CursorMatchers.html)
@@ -134,7 +140,7 @@ This functionality is not available in the Espresso framework and will require a
 Prettify the output of the matcher's description.
 Notice that this test is flaky as well. Implementation of the custom idling resource (task #11) will make this test more stable.
 
-##Task #8: External intents
+##Task #8: External intents, Independent tests and first injection.
 
 ##### Useful  material and links: 
 [Espresso intents] (https://google.github.io/android-testing-support-library/docs/espresso/intents/)
@@ -144,6 +150,8 @@ Write a test that verifies that correct location data is being sent to a map whe
 
 #####Description:
 To make this test independent make sure to clear the shared preference storage beforehand. Your test should be checking for a default location value.
+
+Before implemention your own solution take a look at the production application. Find how the data is stored and which class is used to read and write this data. Inject this class into your test and use it for your advantage.
 
 ##Task #9: Launching into different activities
 ##### Useful  material and links: 
@@ -156,6 +164,11 @@ Write a test that launches straight into the DetailsActivity and verify all that
 #####Description:
 You need to setup the test in a way that the data is preloaded into the databse. You will need to do it before activity launches.
 Your activity after the setup must look identical to a normal activity that was created as a result of a selection on the main activity.
+
+
+## Refactoring time.
+
+Sit back and read [Espresso Style Guide](https://github.com/pivotal-vladimir/espresso-bootcamp/wiki/Espresso-Style-guide). Once you fully grasped the idea, refactor your tests so they look like first class tests written by Espresso master.
 
 #Espresso Advanced. Dependency Injections. Network synchronization. Fake data. 		
 
@@ -188,6 +201,8 @@ Don't add any dependencies for now. Just add your module on top of the existing 
 This is the right time to use a test module to your advantage.
 You tests should pass 100% of the runs.
 
+Using AsyncTask for this task is considered to be a hacky, but an easy solution. To become an Espresso Jedi you need to implement an IdlingResource interface.
+
 ## Task #12:MockWebServer
 #####Useful  material and links: 
 
@@ -201,5 +216,4 @@ You tests should pass 100% of the runs.
 3. Add a test that tests server unavailable error
 
 #####Description:
-Responses need to be built out using GSON library.
-
+Responses need to be built out using GSON library. Don't include raw json in your tests.
